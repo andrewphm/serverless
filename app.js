@@ -7,6 +7,10 @@ const dynamoDB = new AWS.DynamoDB.DocumentClient();
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('<h1>Hello World!</h1>');
+});
+
 // Create a new user
 app.post('/users', async (req, res) => {
   const { name, email } = req.body;
